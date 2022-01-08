@@ -14,7 +14,7 @@ export function remainingMinutesInOven(actualMinutesInOven) {
  * @returns {number} the total preparation time 
  **/
 export function preparationTimeInMinutes(numberOfLayers) {
-  return numberOfLayers * PREPARATION_MINUTES_PER_LAYER;
+  return PREPARATION_MINUTES_PER_LAYER * numberOfLayers;
 }
 
 /**Calculates the total working time. That is, the time to prepare all the layers of lasagna, and the time already spent in the oven.
@@ -23,5 +23,5 @@ export function preparationTimeInMinutes(numberOfLayers) {
  * @returns {number} the total working time
  **/
 export function totalTimeInMinutes(numberOfLayers, actualMinutesInOven) {
-  return PREPARATION_MINUTES_PER_LAYER * numberOfLayers + actualMinutesInOven
+  return preparationTimeInMinutes(numberOfLayers) + actualMinutesInOven;
 }
